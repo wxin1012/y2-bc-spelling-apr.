@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>二年级华文听写 4月</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=KaiTi&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue-theme: #E3F2FD;
+  --pink-theme: #FCE4EC;
+  --purple-theme: #F3E5F5;
+  --green-theme: #E8F5E9;
+  --orange-theme: #FFF3E0;
+}
+body {
+  font-family: 'KaiTi', serif;
+  background-color: #f7fafc;
+  margin: 0;
+  padding: 0;
+}
+.flashcard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 10px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .flashcard-container {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+}
+.card-group {
+  padding: 15px;
+  border-radius: 12px;
+  display: none;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.group-1 { background-color: var(--blue-theme); }
+.group-2 { background-color: var(--pink-theme); }
+.group-3 { background-color: var(--purple-theme); }
+.group-4 { background-color: var(--orange-theme); }
+.card {
+  width: 100%;
+  height: 150px;
+  margin: 10px auto;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: white;
+  font-size: 24px;
+  word-wrap: break-word;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.card-front {
+  font-family: 'Comic Sans MS', cursive;
+  color: #333;
+}
+.card-back {
+  transform: rotateY(180deg);
+  font-family: 'KaiTi', serif;
+  color: #333;
+}
+.group-title {
+  font-weight: bold;
+  padding: 8px 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 28px;
+  font-family: 'KaiTi', serif;
+  text-align: center;
+}
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 15px 0;
+  padding: 0 10px;
+}
+.button-container button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Comic Sans MS', cursive;
+  transition: opacity 0.3s ease;
+  flex-grow: 1;
+  max-width: 120px;
+}
+.button-container button.group-1-btn {
+  background-color: var(--blue-theme);
+}
+.button-container button.group-2-btn {
+  background-color: var(--pink-theme);
+}
+.button-container button.group-3-btn {
+  background-color: var(--purple-theme);
+}
+.button-container button.group-4-btn {
+  background-color: var(--orange-theme);
+}
+.button-container button:hover {
+  opacity: 0.8;
+}
+.instruction {
+  text-align: center;
+  margin: 10px 0;
+  color: #666;
+  font-size: 18px;
+  font-family: 'KaiTi', serif;
+  padding: 0 10px;
+}
+.header {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  text-align: center;
+}
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>二年级华文听写 4月</h1>
+  <p class="instruction">点击卡片翻转并播放华文读音 Click the card to flip and hear Chinese pronunciation.</p>
+</div>
+<div class="button-container">
+  <button class="group-1-btn" onclick="toggleGroup('group-1')">8-14/4</button>
+  <button class="group-2-btn" onclick="toggleGroup('group-2')">15-21/4</button>
+  <button class="group-3-btn" onclick="toggleGroup('group-3')">22-28/4</button>
+  <button class="group-4-btn" onclick="toggleGroup('group-4')">1-7/5</button>
+</div>
+<div class="flashcard-container">
+  <!-- 8-14/4 -->
+  <section id="group-1" class="card-group group-1">
+    <h2 class="group-title">8-14/4</h2>
+    <div class="card"><div class="card-inner"><div class="card-front">yuán gǔn gǔn</div><div class="card-back">圆滚滚</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">rén lèi</div><div class="card-back">人类</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">bǔ liè</div><div class="card-back">捕猎</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">tóu bù</div><div class="card-back">头部</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">suī rán</div><div class="card-back">虽然</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">miè zhǒng</div><div class="card-back">灭种</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">miàn lín</div><div class="card-back">面临</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">chí zǎo</div><div class="card-back">迟早</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">xū zhū</div><div class="card-back">须猪</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">hú luàn</div><div class="card-back">胡乱</div></div></div>
+  </section>
+
+  <!-- 15-21/4 -->
+  <section id="group-2" class="card-group group-2">
+    <h2 class="group-title">15-21/4</h2>
+    <div class="card"><div class="card-inner"><div class="card-front">shā tān</div><div class="card-back">沙滩</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">chéng bǎo</div><div class="card-back">城堡</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">zāi</div><div class="card-back">栽</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">jiān ruì</div><div class="card-back">尖锐</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">lí ba</div><div class="card-back">篱笆</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">bǎi</div><div class="card-back">摆</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">bàng wǎn</div><div class="card-back">傍晚</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">àn shàng</div><div class="card-back">岸上</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">jǔ bàn</div><div class="card-back">举办</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">xìng qù</div><div class="card-back">兴趣</div></div></div>
+  </section>
+
+  <!-- 22-28/4 -->
+  <section id="group-3" class="card-group group-3">
+    <h2 class="group-title">22-28/4</h2>
+    <div class="card"><div class="card-inner"><div class="card-front">zuò zhàn</div><div class="card-back">作战</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">gēn běn</div><div class="card-back">根本</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">fēi xíng yuán</div><div class="card-back">飞行员</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">wēi xiào</div><div class="card-back">微笑</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">hǎi dào</div><div class="card-back">海盗</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">chōng</div><div class="card-back">冲</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">wēi xiǎn</div><div class="card-back">危险</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">chōu lā</div><div class="card-back">抽拉</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">dà wù</div><div class="card-back">大雾</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">fēng zheng</div><div class="card-back">风筝</div></div></div>
+  </section>
+
+  <!-- 1-7/5 -->
+  <section id="group-4" class="card-group group-4">
+    <h2 class="group-title">1-7/5</h2>
+    <div class="card"><div class="card-inner"><div class="card-front">xiàn</div><div class="card-back">线</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">zhī</div><div class="card-back">之</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">zàn shǎng</div><div class="card-back">赞赏</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">yú kuài</div><div class="card-back">愉快</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">zì yóu zì zài</div><div class="card-back">自由自在</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">qí tā</div><div class="card-back">其他</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">mín zú</div><div class="card-back">民族</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">fēng jǐng</div><div class="card-back">风景</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">shí zǐ</div><div class="card-back">石子</div></div></div>
+    <div class="card"><div class="card-inner"><div class="card-front">lún tāi</div><div class="card-back">轮胎</div></div></div>
+  </section>
+</div>
+<script>
+// 显示第一组默认
+window.onload = function() {
+  document.getElementById('group-1').style.display = 'block';
+};
+
+// 切换卡片组显示
+function toggleGroup(groupId) {
+  // 隐藏所有组
+  document.querySelectorAll('.card-group').forEach(group => {
+    group.style.display = 'none';
+  });
+  // 显示选中的组
+  const group = document.getElementById(groupId);
+  group.style.display = 'block';
+  
+  // 收起所有翻转的卡片
+  document.querySelectorAll('.card').forEach(card => {
+    card.classList.remove('flipped');
+  });
+}
+
+// 卡片交互功能
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', function() {
+    this.classList.toggle('flipped');
+    // 播放背面华文词汇的读音
+    playAudio(this.querySelector('.card-back').textContent.trim());
+  });
+});
+
+// 语音播放功能
+function playAudio(text) {
+  if (window.speechSynthesis) {
+    // 取消当前正在播放的语音
+    window.speechSynthesis.cancel();
+    
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'zh-CN';
+    utterance.rate = 0.8; // 稍微慢一点
+    
+    // 处理移动设备上的自动播放限制
+    const play = () => {
+      window.speechSynthesis.speak(utterance);
+    };
+    
+    // 有些移动设备需要用户交互后才能播放声音
+    if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+      window.speechSynthesis.cancel();
+      setTimeout(play, 100);
+    } else {
+      play();
+    }
+  } else {
+    alert("您的浏览器不支持语音合成功能，请使用Chrome或Edge浏览器");
+  }
+}
+</script>
+</body>
+</html>
